@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Lista de Alunos</h1>
+<a href="create/">Adicionar Aluno</a>
+<ul>
+{% for aluno in alunos %}
+    <li>{{ aluno.nome }} ({{ aluno.idade }} anos) - {{ aluno.casa.nome }} <a href="update/{{ aluno.id }}/">Editar</a> <a href="delete/{{ aluno.id }}/">Deletar</a></li>
+{% endfor %}
+</ul>
+{% endblock %}

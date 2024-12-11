@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Lista de Casas</h1>
+<a href="create/">Adicionar Casa</a>
+<ul>
+{% for casa in casa %}
+    <li>{{ casa.nome }} - {{ casa.responsavel }} <a href="update/{{ casa.id }}/">Editar</a> <a href="delete/{{ casa.id }}/">Deletar</a></li>
+{% endfor %}
+</ul>
+{% endblock %}
